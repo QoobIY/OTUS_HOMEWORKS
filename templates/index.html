@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Магазин</title>
+</head>
+<body>
+    <h1>Добро пожаловать в интернет магазин "Flask".</h1>
+    <h2>Список товаров</h2>
+    <ul>
+        {% for i in products %}
+            <div style="display: inline-block;width: 300px;">
+                <img width="300" src="https://images.yourstory.com/cs/wordpress/2016/08/125-fall-in-love.png?fm=png&auto=format" alt="">
+                <h3>
+                    <a href={{ url_for('detail', product_id = i.id) }}>{{ i.name }}</a>
+                </h3>
+            </div>
+        {% endfor %}
+    </ul>
+</body>
+</html>

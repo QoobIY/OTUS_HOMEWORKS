@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="margin: 0 auto;font-size: 20px;">
+    <a href={{ url_for('index') }}>Назад</a>
+    <h1>{{ product.name }}</h1>
+    <img width="500" src="https://images.yourstory.com/cs/wordpress/2016/08/125-fall-in-love.png?fm=png&auto=format" alt="">
+    <div style="color: #6575c6">
+        {{ product.description }}
+    </div>
+    <div>
+        Цена: <div style="font-weight: bold;color: #2e8045;">{{ product.price }} руб.</div>
+        <button>Купить</button>
+    </div>
+</body>
+</html>
