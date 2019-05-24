@@ -4,15 +4,18 @@ Simple shop site on flask framework
 
 ## Requirements
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install [flask](http://flask.pocoo.org).
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requierement packages.
 
 ```bash
-pip install flask
+pip install -r requirements.txt
 ```
 
 ## Usage
-
-1. Change **SERVER_NAME** in conf.py the one you want to use to start the server
+1. Create test database using a special script
+    ```python
+        python products_creator.py
+    ```
+2. Change **SERVER_NAME** in conf.py the one you want to use to start the server
     ```python
     class Config():
         DEBUG = False
@@ -23,7 +26,7 @@ pip install flask
         DEBUG = True
         SERVER_NAME = "127.0.0.1:8082" # <-- Change server name and port
     ```
-2. Start server
+3. Start server
     ```bash
     python app.py
     ```
