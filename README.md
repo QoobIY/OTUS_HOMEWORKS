@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ## Usage
 1. Create test database using a special script
     ```python
-        python products_creator.py
+   python products_creator.py
     ```
 2. Change **SERVER_NAME** in conf.py the one you want to use to start the server
     ```python
