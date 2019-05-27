@@ -51,7 +51,7 @@ Table.create()
 
 `Table.drop()` delete table **Table** from database
 
-All basic commands are also presented in file [sqlite_orm_example.py]('./sqlite_orm_example.py')
+All basic commands are also presented in file [sqlite_orm_example.py]('sqlite_orm_example.py')
 
 ## Contributing
 
