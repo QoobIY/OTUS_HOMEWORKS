@@ -16,7 +16,7 @@ class Result:
                         if key in foreign_keys:
                             dict_row[key.replace(field[1].foreign_table.__table__+'__', '', 1)] = value
                     foreign_list.append(dict_row)
-                self.__dict__[field[1].foreign_table.__table__] = Result(field[1].foreign_table, foreign_list)
+                setattr(self, field[1].foreign_table.__table__, Result(field[1].foreign_table, foreign_list))
 
     def to_dict(self):
         return self.data

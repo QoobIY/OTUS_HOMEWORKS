@@ -42,13 +42,11 @@ class Base:
                 raise sqlite3.DatabaseError('Need to open session')
             foreign_fields = self._get_foreign_fields()
             query_keys = self.get_keys(table=True)
-            if len(foreign_fields) > 0:
-                for field in foreign_fields:
-                    query_keys.extend(field[1].foreign_table().get_keys(table=True))
+            for field in foreign_fields:
+                query_keys.extend(field[1].foreign_table().get_keys(table=True))
             query = 'SELECT {} FROM {}'.format(",".join(query_keys), self.__table__)
-            if len(foreign_fields) > 0:
-                for field in foreign_fields:
-                    query += ' JOIN {0} ON {1}.{2}={0}.id'.format(field[1].foreign_table.__table__, self.__table__, field[0])
+            for field in foreign_fields:
+                query += ' JOIN {0} ON {1}.{2}={0}.id'.format(field[1].foreign_table.__table__, self.__table__, field[0])
             if len(kwargs) > 0:
                 query += ' WHERE '
                 filters = fields_to_sql_row(kwargs, self.__table__)
