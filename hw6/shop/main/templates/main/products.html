@@ -1,0 +1,24 @@
+{%  extends 'main/base.html' %}
+
+{% block title %}
+    Список товаров
+{% endblock %}
+
+{% block content %}
+    {%  load static %}
+    <div class="row">
+        {% for product in product_list %}
+            <div class="col-3">
+                <div class="card" style="height: 100%;width: 100%;">
+                    <img class="card-img-top" src="{% static product.url %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ product.name }}</h5>
+                        <p class="card-text">{{ product.price }} руб.</p>
+                        <a href="{%  url 'product' pk=product.id %}" class="btn btn-primary">Перейти</a>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+{% endblock %}
